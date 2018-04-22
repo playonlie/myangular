@@ -1,7 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {WelcomepageComponent} from './components/welcomepage.components';
+import {WelcomepageComponent} from './components/welcomepage.component';
 import {AboutComponent} from './components/about.component';
 
 

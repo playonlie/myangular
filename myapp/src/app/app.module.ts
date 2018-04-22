@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { WelcomepageComponent } from './components/welcomepage.components';
+import { WelcomepageComponent } from './components/welcomepage.component';
 import { AboutComponent } from './components/about.component';
 import { routing } from './app.routing';
+
+import { AlertModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

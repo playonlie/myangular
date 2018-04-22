@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My Home Page';
+	WebName : string;
+
+	constructor(){
+		this.WebName = "Demo Site ver. Angular2";
+	}
+
 }
