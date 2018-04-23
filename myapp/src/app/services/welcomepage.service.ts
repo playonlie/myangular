@@ -8,6 +8,6 @@ export class welcomeService {
 
    fakeLogin(): string {   	
       return "something";
-   }
-   
+   }  
+	
 } 

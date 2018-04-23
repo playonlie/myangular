@@ -17,6 +17,10 @@ export class AppComponent {
 		this.LoginName = "Demo Site ver. Angular2";
 	}
 
+	setLoginName(lname : string){
+		this.LoginName = lname;
+	}
+
 	ngOnInit(): void{
 		console.log(this._appService.getApp());
 
