@@ -1,9 +1,10 @@
-<div>
+<div class="container">
 <h1>{{title}}</h1>
-</div>
+
 <p>{{msg}}</p>
 <form (submit)="userEntry(input.value)" *ngIf="boxshown">
 	<label>Please enter your name :</label>
 	<input type="text" #input>
 	<button type="submit" >Submit</button>
 </form>
+</div>
