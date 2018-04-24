@@ -17,7 +17,7 @@ export class AppComponent {
 		this.LoginName = "Demo Site ver. Angular2";
 	}
 
-	setLoginName(lname : string){
+	setLoginName(lname : string) : void{
 		this.LoginName = lname;
 	}
 
