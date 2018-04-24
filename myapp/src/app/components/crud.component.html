@@ -1,23 +1,74 @@
 <div class="container">
-<h1>{{title}}</h1>
 
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="name">Name:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" placeholder="Enter your name">
-    </div>
+  <h1>{{title}}</h1>
+  <div class="alert alert-success" *ngIf="msg">
+  <strong>Success!</strong> {{msg}}
+  <a class="close" (click)="closeMsg()">&times;</a>
+  <div class="clearfix"></div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="position">Position:</label>
-    <div class="col-sm-10"> 
-      <input type="password" class="form-control" id="position" placeholder="Enter position">
+
+
+  <h3>Create Data : </h3>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" placeholder="Enter your name">
+      </div>
     </div>
-  </div>
-  <div class="form-group"> 
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="position">Position:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model.position" placeholder="Enter position">
+      </div>
     </div>
-  </div>
-</form>
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="addEmployee()">Save</button>
+      </div>
+    </div>
+  </form>
+
+  <h3>Read and Delete :</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width=400>Name</th>
+        <th width=400>Position</th>
+        <th width=200>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i = index">
+        <td>{{employee.name}}</td>
+        <td>{{employee.position}}</td>
+        <td>
+          <a class="btn btn-success" (click)="editEmployee(i)">Edit</a>
+          <a class="btn btn-danger" (click)="delEmployee(i)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Update :</h3>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model2.name" placeholder="Enter your name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="position">Position:</label>
+      <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model2.position" placeholder="Enter position">
+      </div>
+    </div>
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="updateEmployee()">Save</button>
+      </div>
+    </div>
+  </form>
+
 </div>
